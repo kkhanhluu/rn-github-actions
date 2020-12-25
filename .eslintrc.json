@@ -1,25 +1,67 @@
 {
-    "extends": ["airbnb", "prettier", "plugin:node/recommended"],
-    "plugins": ["prettier"],
-    "rules": {
-      "prettier/prettier": "error",
-      "spaced-comment": "off",
-      "no-console": "warn",
-      "consistent-return": "off",
-      "func-names": "off",
-      "object-shorthand": "off",
-      "no-process-exit": "off",
-      "no-param-reassign": "off",
-      "no-return-await": "off",
-      "no-underscore-dangle": "off",
-      "class-methods-use-this": "off",
-      "prefer-destructuring": ["error", { "object": true, "array": false }],
-      "no-unused-vars": [
-        "error",
-        { "argsIgnorePattern": "req|res|next|val|err" }
-      ],
-      "parserOptions": {
-        "sourceType": "module"
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "spaced-comment": "off",
+    "no-console": "warn",
+    "consistent-return": "off",
+    "func-names": "off",
+    "object-shorthand": "off",
+    "no-process-exit": "off",
+    "no-param-reassign": "off",
+    "no-return-await": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "prefer-destructuring": [
+      "error",
+      {
+        "object": true,
+        "array": false
       }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "req|res|next|val|err"
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ], 
+    "react/style-prop-object": [0]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
     }
   }
+}
