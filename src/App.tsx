@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
 });
 
 const App: React.FC<Record<string, unknown>> = () => {
-  const a
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
