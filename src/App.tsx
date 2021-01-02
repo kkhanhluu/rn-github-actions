@@ -18,6 +18,7 @@ const App: React.FC<Record<string, unknown>> = () => {
       <StatusBar style="auto" />
     </View>
   );
+  const a = 2
 };
 
 export default App;

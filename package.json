@@ -12,12 +12,6 @@
     "tsc": "tsc",
     "prettier:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}' --ignore-path ./.prettierignore"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "jest": {
     "preset": "jest-expo",
     "globals": {
@@ -41,7 +35,10 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": ["eslint src --ext .js,.ts,.tsx", "prettier --check --ignore-path ./.prettierignore"]
+    "*.{ts,tsx,js,jsx}": [
+      "eslint src --ext .js,.ts,.tsx",
+      "prettier --check --ignore-path ./.prettierignore"
+    ]
   },
   "dependencies": {
     "expo": "~40.0.0",
