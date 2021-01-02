@@ -9,10 +9,12 @@
     "test": "jest",
     "lint": "eslint src --ext .js,.ts,.tsx",
     "lint-staged": "lint-staged",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prettier:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}' --ignore-path ./.prettierignore"
   },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -37,6 +39,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
     ]
+  },
+  "lint-staged": {
+    "*.{js,html}": "prettier --check --ignore-path ./.prettierignore"
   },
   "dependencies": {
     "expo": "~40.0.0",
