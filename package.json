@@ -12,6 +12,12 @@
     "tsc": "tsc",
     "prettier:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}' --ignore-path ./.prettierignore"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "jest": {
     "preset": "jest-expo",
     "globals": {
